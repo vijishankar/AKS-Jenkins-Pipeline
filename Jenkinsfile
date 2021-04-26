@@ -14,15 +14,26 @@ pipeline {
                    withCredentials([usernamePassword(credentialsId: 'myAzureCredential', passwordVariable: 'CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
                           
 			   sh '''
-                     az login --service-principal -u $AZURE_CLIENT_ID -p $CLIENT_SECRET -t $AZURE_TENANT_ID
-		     /usr/local/bin/kubectl get nodes
-		     /usr/local/bin/kubectl apply -f k8s-deployment.yaml --validate=false
+			   
+                                    az login --service-principal -u $AZURE_CLIENT_ID -p $CLIENT_SECRET -t $AZURE_TENANT_ID
+		     
+		                    az aks get-credentials --resource-group Temenos-POC-RG --name Devops-AKS
+		     
+		                    az aks update -n Devops-AKS -g Temenos-POC-RG --attach-acr cptdockerregistry
+		     
+		                    /usr/local/bin/kubectl get nodes
+		     
+		                    /usr/local/bin/kubectl apply -f k8s-deployment.yaml --validate=false
+				    
+				    /usr/local/bin/kubectl get pods
+				    
+				    /usr/local/bin/kubectl get services
+		     
 						'''
 			   
 			   
-                        }
-            }
-			}
-		
-	}
+                       }
+                  }
+	     }
+      }
 }	
