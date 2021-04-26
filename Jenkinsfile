@@ -15,11 +15,16 @@ pipeline {
                            sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $CLIENT_SECRET -t $AZURE_TENANT_ID'
                             
 			   sh 'az aks get-credentials --resource-group Temenos-POC-RG --name Devops-AKS'
-			   sh 'kubectl get nodes'
 		
                        
                         }
             }
+		
+		stage('Apply Kubernetes files') {
+    withKubeConfig([credentialsId: 'user1', serverUrl: 'devops-aks-dns-0e0112c4.hcp.eastus.azmk8s.io']) {
+      sh 'kubectl get nodes'
+    }
+  }
 	  }  
 }
 }
