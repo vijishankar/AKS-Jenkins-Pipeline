@@ -16,6 +16,7 @@ pipeline {
 			   sh '''
                      az login --service-principal -u $AZURE_CLIENT_ID -p $CLIENT_SECRET -t $AZURE_TENANT_ID
 		     /usr/local/bin/kubectl get nodes
+		     /usr/local/bin/kubectl create -f k8s-deployment.yaml
 						'''
 			   
 			   
