@@ -16,7 +16,7 @@ pipeline {
                             
 			   sh 'az aks get-credentials --resource-group Temenos-POC-RG --name Devops-AKS'
 		
-                       sh '~/place/where/kubectl/installed/kubectl config --kubeconfig=/var/lib/jenkins/.kube/config view'
+                       sh 'kubectl get nodes'
                         }
             }
 		
