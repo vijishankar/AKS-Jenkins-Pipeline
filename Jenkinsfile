@@ -16,7 +16,7 @@ pipeline {
                             
 			   sh 'az aks get-credentials --resource-group Temenos-POC-RG --name Devops-AKS'
 		
-                       sh './kubectl get nodes'
+                       sh '~/place/where/kubectl/installed/kubectl get nodes'
                         }
             }
 		
