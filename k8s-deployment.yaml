@@ -1,21 +1,16 @@
-apiVersion: v1beta1
-kind: Pod
+apiVersion: extensions/v1beta1
+kind: Deployment
 metadata:
-  name: my-nginx
-  labels:
-    app: nginx
+  name: sample-k8s-deployment
 spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: nginx
+  replicas: 1
   template:
     metadata:
       labels:
-        app: nginx
+        app: sample-k8s-app
     spec:
       containers:
-      - name: nginx
+      - name: sample-k8s-app-container
         image: nginx:1.14.2
         ports:
-        - containerPort: 80
+        - containerPort: 8080
