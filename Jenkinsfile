@@ -26,6 +26,15 @@ pipeline {
 		
 	  
 
-  }	  
+  }
+
+
+stage('Apply Kubernetes files') {
+    withKubeConfig([credentialsId: 'kubeconfig', serverUrl: 'devops-aks-dns-0e0112c4.hcp.eastus.azmk8s.io']) {
+      sh 'kubectl get nodes'
+    }
+  }
+
+  
 }
 }
