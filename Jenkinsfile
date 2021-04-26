@@ -15,8 +15,7 @@ pipeline {
                           
 			   sh '''
                      az login --service-principal -u $AZURE_CLIENT_ID -p $CLIENT_SECRET -t $AZURE_TENANT_ID
-		     az aks get-credentials --resource-group Temenos-POC-RG --name Devops-AKS
-		     kubectl get nodes
+		     
 						'''
 			   
 			   
