@@ -19,8 +19,6 @@ pipeline {
 		     
 		                    az aks get-credentials --resource-group Temenos-POC-RG --name Temenos-AKS
 		     
-		                    az aks update -n Temenos-AKS -g Temenos-POC-RG --attach-acr cptdockerregistry
-		     
 		                    /usr/local/bin/kubectl get nodes
 		     
 		                    /usr/local/bin/kubectl apply -f k8s-deployment.yaml --validate=false
