@@ -15,7 +15,7 @@ pipeline {
                           
 			   sh '''
                      az login --service-principal -u $AZURE_CLIENT_ID -p $CLIENT_SECRET -t $AZURE_TENANT_ID
-		     
+		     ./kubectl get nodes
 						'''
 			   
 			   
