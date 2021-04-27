@@ -27,7 +27,7 @@ pipeline {
 				    
 				    /usr/local/bin/kubectl get services
 				    
-				    helm install deployacrimage deployacrimage/
+				    /usr/local/bin/helm install deployacrimage deployacrimage/
 		     
 						'''
 			   
