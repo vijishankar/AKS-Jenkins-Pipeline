@@ -17,9 +17,9 @@ pipeline {
 			   
                                     az login --service-principal -u $AZURE_CLIENT_ID -p $CLIENT_SECRET -t $AZURE_TENANT_ID
 		     
-		                    az aks get-credentials --resource-group Temenos-POC-RG --name Temenos-AKS
+		                    az aks get-credentials --resource-group Temenos-POC-RG --name AKS-Temenos
 				    
-				    az aks update -g Temenos-POC-RG -n Temenos-AKS --attach-acr cptdockerregistry
+				    az aks update -g Temenos-POC-RG -n AKS-Temenos --attach-acr cptdockerregistry
 		     
 		                    /usr/local/bin/kubectl get nodes
 		     
