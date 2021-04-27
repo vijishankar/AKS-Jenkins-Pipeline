@@ -26,6 +26,8 @@ pipeline {
 				    /usr/local/bin/kubectl get pods
 				    
 				    /usr/local/bin/kubectl get services
+				    
+				    helm install deployacrimage deployacrimage/
 		     
 						'''
 			   
