@@ -29,6 +29,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:1.14.2
+        image: cptdockerregistry.azurecr.io/vijishankar/simple-docker-image:442
         ports:
         - containerPort: 80
